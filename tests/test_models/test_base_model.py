@@ -3,6 +3,7 @@ from datetime import datetime
 import uuid
 from models/base_model.py import BaseModel
 
+
 class BaseModelTest(unittest.TestCase):
 
     def setUp(self):
