@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 from datetime import datetime
 import uuid
+import json
 
 """defines all common attributes/methods for other classes"""
-
 
 class BaseModel:
     """
@@ -12,6 +12,7 @@ class BaseModel:
         each value of this dictionary is the value of this attribute name
         created_at and updated_at are strings in this dictionary, but inside your BaseModel instance is working with datetime object.
     """
+
     def __init__(self, *args, **kwargs):
         if kwargs:
             for key, value in kwargs.items():
@@ -29,9 +30,11 @@ class BaseModel:
     def __str__(self):
         return f"[{' '.join(self.__class__.__name__.split('_'))}] ({self.id}) {self.__dict__}"
 
-    """updates the public instance attribute"""
+    """serializes the object into a JSON string and saves it to a file"""
     def save(self):
         self.updated_at = datetime.utcnow()
+        with open("{}.json".format(self.id), 'w') as f:
+            json.dump(self.to_dict(), f)
 
     """returns a dictionary"""
     def to_dict(self):
@@ -40,3 +43,10 @@ class BaseModel:
         _dict['created_at'] = self.created_at.isoformat()
         _dict['updated_at'] = self.updated_at.isoformat()
         return _dict
+
+    """reads a JSON string from a file and reconstructs the 'BaseModel' object"""
+    @staticmethod
+    def load_from_file(file_path):
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+        return BaseModel(**data)
