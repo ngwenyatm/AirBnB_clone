@@ -13,7 +13,8 @@ class BaseModel:
                 if key == '__class__':
                     continue
                 if key == 'created_at' or key == 'updated_at':
-                    setattr(self, key,datetime.strptime(value, "%Y-%m-%dT:%H:%M:%S.%f"))
+                    setattr(self, key,
+                            datetime.strptime(value, "%Y-%m-%dT:%H:%M:%S.%f"))
                 else:
                     setattr(self, key, value)
         else:
@@ -24,8 +25,8 @@ class BaseModel:
 
     """returns object as a str"""
     def __str__(self):
-        return f"[{' '.join(self.__class__.__name__.split('_'))}]
-    ({self.id}) {self.__dict__}"
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
 
     """serializes the object into a JSON string and saves it to a file"""
     def save(self):
