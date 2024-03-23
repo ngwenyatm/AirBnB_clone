@@ -7,17 +7,21 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     def emptyline(self):
+       " ""do nothing"""
         pass
 
     def do_quit(self, line):
+        """exits the program"""
         return True
 
     def do_EOF(self, line):
+        """handles EOF"""
         return True
 
     def do_help(self, line):
+        """keep this updated"""
         pass
-    
+   """ 
     def do_create(self, line):
         tokens = line.split()
         
@@ -50,15 +54,12 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             class_name = args[0]
-            instance_id = args[1]
+            instance_id = args[2]
             try:
                 instance = storage.get(class_name, instance_id)
                 print(instance)
             except KeyError:
                 print("** no instance found **")
-
-    def default(self, line):
-        print(f"unknown function:{line}")
-
-if __name__ == "__main__":
-    HBNBCommand().cmdloop()
+    """
+    if __name__ == "__main__":
+        HBNBCommand().cmdloop()
