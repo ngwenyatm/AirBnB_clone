@@ -15,9 +15,7 @@ class FileStorage:
         FileStorage.__objects[key] = obj
 
     def save(self):
-        for key, value in FileStorage.__objects.items():
-            serialized_objects[key] = value.to_dict()
-
+        serialized_objects = {key: obj.to_dict() for key, obj in FileStorage.__objects.items()}
         with open(FileStorage.__file_path, 'w') as file:
             json.dump(serialized_objects, file)
 
@@ -26,8 +24,9 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as file:
                 loaded_objects = json.load(file)
                 for key, value in loaded_objects.items():
-                    class_name, obj.id = key.split('.')
-                    obj = BaseModel(**value)
-                    self.new(obj)
+                    Base_model, obj.id = key.split('.')
+                    obj_cls = globals()[Base_model]
+                    obj = obj_cls(**value)
+                    FileStorage.__objects[key] = obj
         except FileNotFoundError:
             pass
