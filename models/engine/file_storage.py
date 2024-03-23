@@ -24,7 +24,7 @@ class FileStorage:
     def reload(self):
         try:
             with open(FileStorage.__file_path, 'r') as file:
-                loaded_objects = json.laod(file)
+                loaded_objects = json.load(file)
                 for key, value in loaded_objects.items():
                     class_name, obj.id = key.split('.')
                     obj = BaseModel(**value)
