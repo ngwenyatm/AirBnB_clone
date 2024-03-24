@@ -19,23 +19,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, line):
         tokens = line.split()
-
-        if len(tokens) < 2:
+        if line == "" or line is None: 
             print("** class name missing **")
             return
-
-        class_name = tokens[0]
-
-        try:
-            model_class = globals()[class_name]
-        except KeyError:
+        elif tokens[0] != "BaseModel":
             print("** class doesn't exist **")
-            return
 
-        new_instance = model_class()
-        storage.new(new_instance)
-        storage.save()
-        print(new_instance.id)
+            obj = eval(tokens[0])()
+            obj.save
+            print(obj.id)
 
     def do_show(self, line):
         
@@ -69,11 +61,11 @@ class HBNBCommand(cmd.Cmd):
             if args[0] not in self.classes():
                 print("** class doesn't exist **")
             else:
-                n_list = [str(obj) for key, obj in storage.all().items()
+                n_list = [str(obj) for key, obj in storage.all()
                       if type(obj).__name__ == args[0]]
                 print(n_list)
         else:
-            new_list = [str(obj) for key, obj in storage.all().items()]
+            new_list = [str(obj) for key, obj in storage.all()]
             print(new_list)
 
     def do_destroy(self, line):
