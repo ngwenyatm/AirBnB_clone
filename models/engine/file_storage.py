@@ -24,8 +24,8 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as file:
                 loaded_objects = json.load(file)
                 for key, value in loaded_objects.items():
-                    Base_model, obj.id = key.split('.')
-                    obj_cls = globals()[Base_model]
+                    class_name, obj.id = key.split('.')
+                    obj_cls = globals()[class_name]
                     obj = obj_cls(**value)
                     FileStorage.__objects[key] = obj
         except FileNotFoundError:
