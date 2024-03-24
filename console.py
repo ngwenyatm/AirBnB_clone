@@ -9,13 +9,16 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
 
-    def do_quit(self, args):
+    classes = ["BaseModel", "User", "Amenity",
+                     "Place", "Review", "State", "City"]
+
+    def do_quit(self, line):
         return True
     
-    def help_quit(self,arg)
+    def help_quit(self, line)
         print("Quit command to exit the program")
 
-    def do_EOF(self, args):
+    def do_EOF(self, line):
         print()
         return True
 
@@ -43,8 +46,8 @@ class HBNBCommand(cmd.Cmd):
             return
         elif len(tokens) < 2:
             print("** instance id missing **")
-        elif tokens[0] != "BaseModel":
-            print("** instance id missing **")
+        elif tokens[0] not in self.classes:
+            print("** class doesn't exist **")
             return
         else:
             obj = storage.all()
@@ -56,17 +59,17 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, line):
-        if line != "":
-            args = line.split(' ')
-            if args[0] not in self.classes():
+        if line != "" or None:
+            args = line.split(" ")
+            if args[0] not in self.classes:
                 print("** class doesn't exist **")
             else:
                 n_list = [str(obj) for key, obj in storage.all()
                       if type(obj).__name__ == args[0]]
                 print(n_list)
         else:
-            new_list = [str(obj) for key, obj in storage.all()]
-            print(new_list)
+            new = [str(obj) for key, obj in storage.all()]
+            print(new)
 
     def do_destroy(self, line):
         tokens = line.split()
@@ -76,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(tokens) < 2:
             print("** instance id missing **")
             return
-        elif tokens[0] != "BaseModel":
+        elif tokens[0] not in self.not in self.classes:
             print("** class doesn't exist **")
         else:
             obj = storage.all()
