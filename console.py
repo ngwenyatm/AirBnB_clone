@@ -15,7 +15,7 @@ class HBNBCommand(cmd.Cmd):
     def do_quit(self, line):
         return True
     
-    def help_quit(self, line)
+    def help_quit(self, line):
         print("Quit command to exit the program")
 
     def do_EOF(self, line):
@@ -79,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(tokens) < 2:
             print("** instance id missing **")
             return
-        elif tokens[0] not in self.not in self.classes:
+        elif tokens[0] not in self.classes:
             print("** class doesn't exist **")
         else:
             obj = storage.all()
