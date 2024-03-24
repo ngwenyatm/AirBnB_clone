@@ -5,6 +5,7 @@ from models.base_model import BaseModel
 from models import storage
 
 class HBNBCommand(cmd.Cmd):
+    """cmd line interpreter"""
 
     prompt = "(hbnb) "
 
@@ -12,6 +13,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_EOF(self, args):
+        print()
         return True
 
     def emptyline(self):
