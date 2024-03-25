@@ -27,6 +27,7 @@ class FileStorage:
                     class_name, obj.id = key.split('.')
                     obj_cls = globals()[class_name]
                     obj = obj_cls(**value)
+                    obj.id = obj.id
                     FileStorage.__objects[key] = obj
         except FileNotFoundError:
             pass
