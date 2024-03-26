@@ -15,6 +15,7 @@ class HBNBCommand(cmd.Cmd):
                "Place", "Review", "State", "City"]
 
     def do_quit(self, line):
+        """Quit command to exist console"""
         return True
 
     def help_quit(self, line):
