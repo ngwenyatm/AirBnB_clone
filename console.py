@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Defines a module for HBNBCommand"""
 
 import cmd
 from models.base_model import BaseModel
