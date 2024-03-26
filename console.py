@@ -4,17 +4,18 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
     """cmd line interpreter"""
 
     prompt = "(hbnb) "
 
     classes = ["BaseModel", "User", "Amenity",
-                     "Place", "Review", "State", "City"]
+               "Place", "Review", "State", "City"]
 
     def do_quit(self, line):
         return True
-    
+
     def help_quit(self, line):
         print("Quit command to exit the program")
 
@@ -65,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             else:
                 n_list = [str(obj) for key, obj in storage.all()
-                      if type(obj).__name__ == args[0]]
+                          if type(obj).__name__ == args[0]]
                 print(n_list)
         else:
             new = [str(obj) for key, obj in storage.all()]
@@ -110,8 +111,8 @@ class HBNBCommand(cmd.Cmd):
         except NameError:
             print("** class doesn't exist **")
             return
-        key = "{}.{}".format(tokens[0], tokens[1])
-        dct = storage.all()
+            key = "{}.{}".format(tokens[0], tokens[1])
+            dct = storage.all()
         try:
             obj_val = dct[key]
         except KeyError:
@@ -123,7 +124,8 @@ class HBNBCommand(cmd.Cmd):
         except AttributeError:
             pass
         setattr(obj_val, args[2], args[3])
-        obj_val.save(
+        obj_val.save()
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
