@@ -1,7 +1,9 @@
+8-index.html
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
     <title>AirBnb Clone</title>
     <link rel="stylesheet" href="styles/4-common.css">
     <link rel="stylesheet" href="styles/3-header.css">
@@ -10,137 +12,184 @@
     <link rel="stylesheet" href="styles/8-places.css">
     <link rel="icon" href="images/icon.png" type="image/png">
 </head>
+
 <body>
     <header>
         <div class="logo"></div>
     </header>
-
     <div class="container">
         <section class="filters">
+            <button type="button">Search</button>
             <div class="locations">
                 <h3>States</h3>
-                <h4>New York, Illinois, Florida, Texas, California, North Carolina, Michigan, Georgia, Ohio</h4>
+                <h4>California, Arizona...</h4>
                 <ul class="popover">
-                  <li>
-                    <h2>California:</h2>
-                    <ul>
-                      <li>San Francisco</li>
-                      <li>Los Altos</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <h2>New York:</h2>
-                    <ul>
-                      <li>Manhattan</li>
-                      <li>Brooklyn</li>
-                    </ul>
-                  </li>
+                    <li>
+                        <h2>Arizona:</h2>
+                    </li>
+                    <li>
+                        <ul class="popover_list">
+                            <li>Page</li>
+                            <li>Page2</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>California:</h2>
+                    </li>
+                    <li>
+                        <ul class="popover_list">
+                            <li>San Francisco</li>
+                            <li>Los Altos</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div class="amenities">
                 <h3>Amenities</h3>
-                <h4>
-                  Swimming pool, Fitness center, Business center, Wi-Fi, Room service, Valet parking, Rooftop bar.
-                </h4>
+                <h4>Internet, Kitchen...</h4>
                 <ul class="popover">
-                    <li>Swimming Pool</li>
-                    <li>Fitness Center</li>
-                    <li>Business Center</li>
-                    <li>Wi-Fi</li>
+                    <li>Internet</li>
+                    <li>TV</li>
+                    <li>Kitchen</li>
+                    <li>Iron</li>
                 </ul>
             </div>
-          <button>
-            Search
-          </button>
         </section>
-
         <section class="places">
-            <h1>Places</h1>
-            <article>
-                <h2>My home</h2>
-                <div class="price_by_night">
-                    <p>$80</p>
-                 </div>
-                 <div class="information">
-                    <div class="max_guest">
-                        <div class="guest_image"></div>
-                        <p>2 Guests</p>
+            <div class="places_title">
+                <h1>Places</h1>
+            </div>
+            <div class="articles">
+                <article>
+                    <div class="price_title">
+                        <div class="article_title">
+                            <h2>My Home</h2>
+                        </div>
+                        <div class="price_by_night">
+                            <div class="price">
+                                $80
+                            </div>
+                        </div>
                     </div>
-                    <div class="number_rooms">
-                        <div class="bed_image"></div>
-                        <p>1 Bedroom</p>
+                    <div class="information">
+                        <div class="max_guest">
+                            <div class="guest_icon">
+                            </div>
+                            <div class="guest_number">
+                                <h2>2 Guests</h2>
+                            </div>
+                        </div>
+                        <div class="number_rooms">
+                            <div class="rooms_icon">
+                            </div>
+                            <div class="rooms_number">
+                                <h2>1 Bedroom</h2>
+                            </div>
+                        </div>
+                        <div class="number_bathrooms">
+                            <div class="bathrooms_icon">
+                            </div>
+                            <div class="bathrooms_number">
+                                <h2>1 Bathroom</h2>
+                            </div>
+                        </div>
                     </div>
-                    <div class="number_bathrooms">
-                        <div class="bath_image"></div>
-                        <p>1 Bathroom</p>
+                    <div class="user">
+                        <b>Owner:</b> John Lennon
                     </div>
-                </div>
-                <div class="user">
-                    <p><b>Owner: </b>Escanor Pride</p>
-                </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </article>
-            <article>
-                <h2>Tiny house</h2>
-                <div class="price_by_night">
-                    <p>$65</p>
-                </div>
-                <div class="information">
-                    <div class="max_guest">
-                        <div class="guest_image"></div>
-                        <p>4 Guests</p>
+                    <div class="description">
+                        This is a lovely 1 bedroom and 1 bathroom apartment than can
+                        accomodate 2 people. It locates at center of Shangai
+                        and next to subway line 1, 1 stop to People Square, 2 stops to
+                        Bund, 3 stops to Jingan Temple.
                     </div>
-                    <div class="number_rooms">
-                        <div class="bed_image"></div>
-                        <p>2 Bedroom</p>
+                </article>
+                <article>
+                    <div class="price_title">
+                        <div class="article_title">
+                            <h2>Tiny House</h2>
+                        </div>
+                        <div class="price_by_night">
+                            <div class="price">
+                                $80
+                            </div>
+                        </div>
                     </div>
-                    <div class="number_bathrooms">
-                        <div class="bath_image"></div>
-                        <p>1 Bathroom</p>
+                    <div class="information">
+                        <div class="max_guest">
+                            <div class="guest_icon">
+                            </div>
+                            <div class="guest_number">
+                                <h2>4 Guests</h2>
+                            </div>
+                        </div>
+                        <div class="number_rooms">
+                            <div class="rooms_icon">
+                            </div>
+                            <div class="rooms_number">
+                                <h2>2 Bedrooms</h2>
+                            </div>
+                        </div>
+                        <div class="number_bathrooms">
+                            <div class="bathrooms_icon">
+                            </div>
+                            <div >
+                                <h2>1 Bathroom</h2>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="user">
-                    <p><b>Owner: </b>Meliodas Wrath</p>
-                </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </article>
-            <article>
-                <h2>A suite</h2>
-                <div class="price_by_night">
-                    <p>$190</p>
-                </div>
-                <div class="information">
-                    <div class="max_guest">
-                        <div class="guest_image"></div>
-                        <p>6 Guests</p>
+                    <div class="user">
+                        <b>Owner:</b> jim
                     </div>
-                    <div class="number_rooms">
-                        <div class="bed_image"></div>
-                        <p>3 Bedroom</p>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo molestias ipsa facere labore sequi dolore quod sunt ex magni optio aspernatur eveniet nobis expedita veritatis pariatur id fugit saepe numquam aut natus, temporibus maxime atque qui corrupti! Nostrum fuga reiciendis maiores accusamus magni commodi nisi animi sint delectus mollitia dicta corrupti inventore sapiente, recusandae, eos aliquam laborum assumenda neque ullam obcaecati facere ipsa minus. At commodi obcaecati tempora dolores voluptatum ea nostrum, voluptatem reprehenderit nulla quos nemo rerum possimus.
                     </div>
-                    <div class="number_bathrooms">
-                        <div class="bath_image"></div>
-                        <p>2 Bathroom</p>
+                </article>
+                <article>
+                    <div class="price_title">
+                        <div class="article_title">
+                            <h2>A Suite</h2>
+                        </div>
+                        <div class="price_by_night">
+                            <div class="price">
+                                $190
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="user">
-                    <p><b>Owner: </b>Ban Greed</p>
-                </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </article>
+                    <div class="information">
+                        <div class="max_guest">
+                            <div class="guest_icon">
+                            </div>
+                            <div class="guest_number">
+                                <h2>2 Guests</h2>
+                            </div>
+                        </div>
+                        <div class="number_rooms">
+                            <div class="rooms_icon">
+                            </div>
+                            <div class="rooms_number">
+                                <h2>1 Bedroom</h2>
+                            </div>
+                        </div>
+                        <div class="number_bathrooms">
+                            <div class="bathrooms_icon">
+                            </div>
+                            <div class="bathrooms_number">
+                                <h2>1 Bathroom</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <b>Owner:</b> jimbo
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nisi, totam tempore quas magni doloribus commodi autem repellendus quod error doloremque voluptate delectus suscipit. Distinctio qui sunt voluptates consectetur fuga maxime at! Quidem aut ut possimus fugiat labore sequi eum facere fuga, autem in consequuntur illum numquam ipsam vel reiciendis optio officia officiis quisquam quia debitis est quaerat. Cum natus blanditiis labore numquam ipsa pariatur quisquam architecto cumque accusantium corporis nulla explicabo nemo temporibus sapiente est, nihil dolorum impedit eveniet!</div>
+                </article>
+            </div>
         </section>
     </div>
-
-  <!-- Body content goes here -->
-
-  <footer>
-    <p>Best School</p>
-  </footer>
+    <footer>
+        Best School
+    </footer>
 </body>
+
 </html>
